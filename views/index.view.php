@@ -51,5 +51,16 @@
         <li><?= ucwords($item); ?>: <?= $todo; ?></li>
         <?php endforeach; ?>
     </ul>
+
+    <!-- fetching from database -->
+    <ul>
+        <?php 
+            foreach($travelData as $travel){
+            $travel->interview(true);
+            if($travel->response() == true){echo "<li>Entry granted for {$travel->description}</li>";}
+            else {echo "<li>Rejected for {$travel->description}</li>";}
+            }
+        ?>
+    </ul>
 </body>
 </html>
