@@ -1,15 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h4>
+<?php  require "../views/partials/head.php"; ?>
+<?php require"..\/views\partials\/nav.php" ?>
+    <!-- <!-- <h4>
         <?=  $greeting  ?>
-    </h4>
+    </h4> -->
     <ul>
         <!-- one approach -->
         <?php
@@ -50,7 +43,7 @@
                 <?php endif; ?>
         <li><?= ucwords($item); ?>: <?= $todo; ?></li>
         <?php endforeach; ?>
-    </ul>
+    </ul> -->
 
     <!-- fetching from database -->
     <ul>
@@ -62,5 +55,5 @@
             }
         ?>
     </ul>
-</body>
-</html>
+
+<?php require"views\partials\/footer.php"; ?>

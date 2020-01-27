@@ -1,6 +1,6 @@
 <?php
 require 'functions.php';
-$greeting = "Hello ".htmlspecialchars($_GET['name']);
+// $greeting = "Hello ".htmlspecialchars($_GET['name']);
  
 $language = ['Javascript','Python','php'];   //to add an item to this array; $language[] = 'English'
 // foreach($language as $lang){
@@ -79,4 +79,4 @@ require 'views\index.view.php';
     $map = new Task($db); //create instance of the class Task
     $map->description = $task['description];
     $map->age = $task['age'];
- }, $tasks) -->
+ }, $tasks)  -->
