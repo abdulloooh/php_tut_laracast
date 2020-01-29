@@ -4,5 +4,6 @@ return $router->define([
     '' => 'controllers/home.php',
     'home'=> 'controllers/home.php',
     'about' => 'controllers/about.php',
-    'contact'=> 'controllers/contact.php'
+    'contact'=> 'controllers/contact.php',
+    // 'array'=> 'array.php'
 ]);
