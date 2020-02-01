@@ -3,7 +3,7 @@
 return [
     "database"=>[
         "connection"=>"mysql:host=127.0.0.1",
-        "dbname"=>"mytodo",
+        "dbname"=>"practice",
         "username"=>"root",
         "password"=>"",
         "options"=>[

@@ -24,7 +24,11 @@ if($password != $cpassword){//confirm password
 }
 //check if username or phone number exists
 try{
-    $count=$app['database']->checkSignup($username,$phone,"user");
+    $return=App::get('database')->check("users",'or',[
+        "username"=>$username,
+        "phone"=>$phone,
+    ]);
+    $count = $return[0];
 }
 catch (PDOException $e){
     // $_SESSION['error']= $e->getMessage();
@@ -40,7 +44,12 @@ if($count>0){
 }
 //if user not exist, insert into database
 try{
-    $app['database']->insertUser($fullname,$username,$phone,$password,$cpassword,"users");
+    App::get('database')->insertUser("users",[
+        "fullname"=>$fullname,
+        "username"=>$username,
+        "phone"=>$phone,
+        "pass"=>$password
+    ]);
     $_SESSION['error'] = "Signup successful, Please login";
     header("location: /");
    exit;

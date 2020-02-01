@@ -1,10 +1,8 @@
 <?php
 session_start();
-if(!isset($_SESSION['message'])){
-    $_SESSION['message'] = "Please Log in";
-    header("location:/");
-}
-if(isset($_SESSION['username'])){
+if(isset($_SESSION['username']) && isset($_SESSION['id'])){
+    // echo $_SESSION['username'];
+    // echo $_SESSION['id'];
     echo "<a href='/logout'>Logout</a>";
     // die(var_dump($_SESSION));
 }

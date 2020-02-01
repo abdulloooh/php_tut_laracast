@@ -12,20 +12,30 @@ class Querybuilder{
         return $statement->fetchAll(PDO::FETCH_CLASS);
     }
 
-    function insertUser($full,$user,$phone,$pass,$cpass,$table){
-        $statement = $this->pdo->prepare("INSERT INTO {$table} (fullname,username,phone,pass,cpassword) VALUES(?,?,?,?,?)");
-        return $statement->execute([$full,$user,$phone,$pass,$cpass]);
+    function insertUser($table, $parameters){   //dynamically insert table
+        // die(var_dump( ':' .implode(', :', array_keys($parameters))));
+        $sql = sprintf("INSERT INTO %s (%s) VALUES(%s)",
+            $table,
+            implode(', ',array_keys($parameters)), 
+            ':' .implode(', :', array_keys($parameters))
+        );
+        $statement = $this->pdo->prepare($sql);
+        return $statement->execute($parameters);
     }
 
-    function selectLogin($user,$pass,$table){
-        $statement = $this->pdo->prepare("Select * from {$table} where username = ? and pass = ?");
-        $statement->execute([$user, $pass]);
-        return $statement->rowCount();
+    function check($table,$relation, $parameters){ //relations: a "or" b to confirm if user already reg, a "and" b to confirm login data=>a:username,b=>password or phone
+        $sql = sprintf("Select * from %s where %s = ? {$relation} %s = ?", 
+            $table,array_keys($parameters)[0],
+            array_keys($parameters)[1]
+        );
+        $statement = $this->pdo->prepare($sql);
+        $statement->execute(array_values($parameters));
+        return [$statement->rowCount(), $statement->fetchAll(PDO::FETCH_CLASS)];  //row count and the content itself
         // return $statement->fetchAll(PDO::FETCH_CLASS);
     }
-    function checkSignup($user,$phone,$table){
-        $statement=$this->pdo->prepare("Select * from {$table} where username = ? or phone = ?");
-        $statement->execute([$user,$phone]);
-        return $statement->rowCount();
-    }
+    // function checkSignup($user,$phone,$table){
+    //     $statement=$this->pdo->prepare("Select * from {$table} where username = ? or phone = ?");
+    //     $statement->execute([$user,$phone]);
+    //     return $statement->rowCount();
+    // }
 }

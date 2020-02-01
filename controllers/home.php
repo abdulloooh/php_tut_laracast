@@ -1,7 +1,7 @@
 <?php
 $name = "Abdullah";
 //fetch database content
-  $tasks = $app['database']->fetch_all("todos");
+  $tasks = App::get('database')->fetch_all("todos");
 
 // die(var_dump($tasks));
 $done = array_filter($tasks,function($task){

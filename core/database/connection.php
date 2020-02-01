@@ -11,7 +11,7 @@ class Connection{
         );
        }
        catch (PDOException $e){
-           die($e->getMessage());
+           die($e->getMessage()); //this hsould actually return like a 404 page practically
        }
     }
 }

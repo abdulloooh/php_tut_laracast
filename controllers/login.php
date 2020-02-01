@@ -17,9 +17,15 @@ try{
         exit();
     }
     
-    $count = $app['database']->selectLogin($username,$password,'users'); //count returns
+    $return = App::get('database')->check('users','and',[
+        'username'=>$username,
+        'pass'=>$password
+    ]); 
+    //count returns
+    $count = $return[0];
     if($count == 1){
         $_SESSION['username'] = $username;
+        $_SESSION['id'] = $return[1][0]->id;
         header("location:/dashboard");
         exit();
     }

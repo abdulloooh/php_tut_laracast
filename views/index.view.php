@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(isset($_SESSION['username'])){
+if(isset($_SESSION['username']) && isset($_SESSION['id'])){
     $_SESSION['message'] = "You are already logged in";
     header("location:/dashboard");
     exit;

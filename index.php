@@ -1,5 +1,6 @@
 <?php
 //this is the entry point
+require 'vendor/autoload.php';
 require "core/bootstrap.php"; //bring all required files from core via bootstrap
 
 // Request::load() //basically to get Router object
