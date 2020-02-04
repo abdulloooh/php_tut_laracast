@@ -4,7 +4,7 @@ require 'vendor/autoload.php';
 require "core/bootstrap.php"; //bring all required files from core via bootstrap
 
 // Request::load() //basically to get Router object
-require Router::load('routes.php')      //so routes.php file should return $router->define([routes array]), the $router object would come from load after delaring $router to be new static in load and in load, I will just require the incoming
+Router::load('routes.php')      //so routes.php file should return $router->define([routes array]), the $router object would come from load after delaring $router to be new static in load and in load, I will just require the incoming
                             ->direct(Request::uri(),Request::method());
 
 

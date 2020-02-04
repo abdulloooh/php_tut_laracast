@@ -21,9 +21,18 @@ class Router{
     } 
 
     public function direct($incoming_uri,$request_type){
+        // die(var_dump(explode('@',$this->routes[$request_type][$incoming_uri])));
         if (array_key_exists($incoming_uri, $this->routes[$request_type])){
-            return $this->routes[$request_type][$incoming_uri];
+            return $this->callAction(...explode('@',$this->routes[$request_type][$incoming_uri]));         //splat operator
             }
         throw new Exception("No defined route for this URI, 404 page here");
         }
+
+    protected function callAction($controller, $action){
+        $controller = new $controller;
+        if(!method_exists($controller, $action)){
+            throw new Exception("custom 404 error");
+        }
+        return $controller->$action();
+    }
 }

@@ -11,11 +11,13 @@ class ComposerStaticInit9a5d9e2c48cdc1b991b7e8f89d2f0a94
         'ComposerAutoloaderInit9a5d9e2c48cdc1b991b7e8f89d2f0a94' => __DIR__ . '/..' . '/composer/autoload_real.php',
         'Composer\\Autoload\\ClassLoader' => __DIR__ . '/..' . '/composer/ClassLoader.php',
         'Composer\\Autoload\\ComposerStaticInit9a5d9e2c48cdc1b991b7e8f89d2f0a94' => __DIR__ . '/..' . '/composer/autoload_static.php',
-        'Connection' => __DIR__ . '/../..' . '/core/database/Connection.php',
+        'Connection' => __DIR__ . '/../..' . '/core/database/connection.php',
+        'PagesController' => __DIR__ . '/../..' . '/controllers/PagesController.php',
         'Post' => __DIR__ . '/../..' . '/array.php',
-        'Querybuilder' => __DIR__ . '/../..' . '/core/database/Querybuilder.php',
+        'Querybuilder' => __DIR__ . '/../..' . '/core/database/querybuilder.php',
         'Request' => __DIR__ . '/../..' . '/core/Request.php',
         'Router' => __DIR__ . '/../..' . '/core/Router.php',
+        'UsersController' => __DIR__ . '/../..' . '/controllers/UsersController.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
