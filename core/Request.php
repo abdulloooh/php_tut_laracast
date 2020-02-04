@@ -1,5 +1,6 @@
 <?php
 
+namespace App\core;
 class Request{
     public static function uri(){
         // die(var_dump(parse_url(($_SERVER['REQUEST_URI']),PHP_URL_PATH)));

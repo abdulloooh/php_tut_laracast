@@ -5,8 +5,8 @@ if(isset($_SESSION['username']) && isset($_SESSION['id'])){
     header("location:/dashboard");
     exit;
 }
-require "views/partials/header.php";
-require "views/partials/nav.php";
+require "App/views/partials/header.php";
+require "App/views/partials/nav.php";
 ?>
 <!-- <h1>Hello word, welcome <?= $name ?></h1> -->
 <ol>
@@ -52,4 +52,4 @@ if(isset($_SESSION['error'])){
     <button type="submit" style="width:30%;display:block;height:3vh;" name="login" value = "login">Submit</button> <br>
 </form>
 
-<?php require "views/partials/footer.php"; ?>
+<?php require "App/views/partials/footer.php"; ?>

@@ -1,5 +1,5 @@
 <?php
-
+namespace App\core;
 class Router{
     protected $routes = [
         "GET"=> [],
@@ -29,6 +29,8 @@ class Router{
         }
 
     protected function callAction($controller, $action){
+        $controller = "App\\controllers\\{$controller}"; //  single front slash is gonna escape the curly bracket thus not treating it as a special char
+        // die(var_dump($controller));
         $controller = new $controller;
         if(!method_exists($controller, $action)){
             throw new Exception("custom 404 error");

@@ -1,5 +1,7 @@
 <?php
 
+namespace App\controllers;
+use App\core\App;
 class UsersController{
     public function signup(){
         session_start();

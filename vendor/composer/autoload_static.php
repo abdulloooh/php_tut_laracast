@@ -7,17 +7,17 @@ namespace Composer\Autoload;
 class ComposerStaticInit9a5d9e2c48cdc1b991b7e8f89d2f0a94
 {
     public static $classMap = array (
-        'App' => __DIR__ . '/../..' . '/core/App.php',
+        'App\\controllers\\PagesController' => __DIR__ . '/../..' . '/App/controllers/PagesController.php',
+        'App\\controllers\\UsersController' => __DIR__ . '/../..' . '/App/controllers/UsersController.php',
+        'App\\core\\App' => __DIR__ . '/../..' . '/core/App.php',
+        'App\\core\\Request' => __DIR__ . '/../..' . '/core/Request.php',
+        'App\\core\\Router' => __DIR__ . '/../..' . '/core/Router.php',
         'ComposerAutoloaderInit9a5d9e2c48cdc1b991b7e8f89d2f0a94' => __DIR__ . '/..' . '/composer/autoload_real.php',
         'Composer\\Autoload\\ClassLoader' => __DIR__ . '/..' . '/composer/ClassLoader.php',
         'Composer\\Autoload\\ComposerStaticInit9a5d9e2c48cdc1b991b7e8f89d2f0a94' => __DIR__ . '/..' . '/composer/autoload_static.php',
         'Connection' => __DIR__ . '/../..' . '/core/database/connection.php',
-        'PagesController' => __DIR__ . '/../..' . '/controllers/PagesController.php',
         'Post' => __DIR__ . '/../..' . '/array.php',
         'Querybuilder' => __DIR__ . '/../..' . '/core/database/querybuilder.php',
-        'Request' => __DIR__ . '/../..' . '/core/Request.php',
-        'Router' => __DIR__ . '/../..' . '/core/Router.php',
-        'UsersController' => __DIR__ . '/../..' . '/controllers/UsersController.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
